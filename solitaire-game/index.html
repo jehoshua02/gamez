@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Solitaire</h1>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <span class="info-label">Score:</span>
+                <span class="info-value" id="score">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Moves:</span>
+                <span class="info-value" id="moves">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Time:</span>
+                <span class="info-value" id="time">0:00</span>
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <!-- Top row: Stock, Waste, and Foundations -->
+            <div class="top-row">
+                <div class="stock-waste">
+                    <div class="card-pile" id="stock">
+                        <div class="card-placeholder">Stock</div>
+                    </div>
+                    <div class="card-pile" id="waste">
+                        <div class="card-placeholder">Waste</div>
+                    </div>
+                </div>
+                
+                <div class="foundations">
+                    <div class="card-pile foundation" id="foundation-0" data-suit="hearts">
+                        <div class="card-placeholder">♥</div>
+                    </div>
+                    <div class="card-pile foundation" id="foundation-1" data-suit="diamonds">
+                        <div class="card-placeholder">♦</div>
+                    </div>
+                    <div class="card-pile foundation" id="foundation-2" data-suit="clubs">
+                        <div class="card-placeholder">♣</div>
+                    </div>
+                    <div class="card-pile foundation" id="foundation-3" data-suit="spades">
+                        <div class="card-placeholder">♠</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom row: Tableau -->
+            <div class="tableau">
+                <div class="card-pile tableau-pile" id="tableau-0"></div>
+                <div class="card-pile tableau-pile" id="tableau-1"></div>
+                <div class="card-pile tableau-pile" id="tableau-2"></div>
+                <div class="card-pile tableau-pile" id="tableau-3"></div>
+                <div class="card-pile tableau-pile" id="tableau-4"></div>
+                <div class="card-pile tableau-pile" id="tableau-5"></div>
+                <div class="card-pile tableau-pile" id="tableau-6"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="newGameBtn" class="btn">New Game</button>
+            <button id="undoBtn" class="btn" disabled>Undo</button>
+            <button id="hintBtn" class="btn">Hint</button>
+            <button id="backBtn" class="btn btn-secondary">Back to Games</button>
+        </div>
+        
+        <div class="message" id="message"></div>
+    </div>
+    
+    <!-- Win Modal -->
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 You Win! 🎉</h2>
+            <p>Congratulations!</p>
+            <div class="final-stats">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="finalScore">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Moves:</span>
+                    <span class="stat-value" id="finalMoves">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="finalTime">0:00</span>
+                </div>
+            </div>
+            <button id="playAgainBtn" class="btn">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+

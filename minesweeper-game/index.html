@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">💣 Minesweeper</h1>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <span class="info-label">💣 Mines:</span>
+                <span class="info-value" id="mineCount">10</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">🚩 Flags:</span>
+                <span class="info-value" id="flagCount">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">⏱️ Time:</span>
+                <span class="info-value" id="time">0</span>
+            </div>
+        </div>
+        
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="easy">Easy (9x9, 10 mines)</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium (16x16, 40 mines)</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard (16x30, 99 mines)</button>
+        </div>
+        
+        <div class="game-board" id="gameBoard"></div>
+        
+        <div class="controls">
+            <button id="newGameBtn" class="btn">New Game</button>
+            <button id="backBtn" class="btn btn-secondary">Back to Games</button>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Left-click</strong> to reveal a cell</p>
+            <p><strong>Right-click</strong> to place/remove a flag</p>
+            <p>Numbers show how many mines are adjacent</p>
+        </div>
+        
+        <div class="message" id="message"></div>
+    </div>
+    
+    <!-- Win Modal -->
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 You Win! 🎉</h2>
+            <p>All mines found!</p>
+            <div class="final-stats">
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="finalTime">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Difficulty:</span>
+                    <span class="stat-value" id="finalDifficulty">Easy</span>
+                </div>
+            </div>
+            <button id="playAgainBtn" class="btn">Play Again</button>
+        </div>
+    </div>
+    
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>💥 Game Over! 💥</h2>
+            <p>You hit a mine!</p>
+            <div class="final-stats">
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="gameOverTime">0</span>
+                </div>
+            </div>
+            <button id="tryAgainBtn" class="btn">Try Again</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+

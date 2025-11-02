@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Othello</h1>
+        
+        <div class="game-info">
+            <div class="player-info" id="blackInfo">
+                <div class="player-disc black-disc"></div>
+                <div class="player-details">
+                    <div class="player-name">Black</div>
+                    <div class="player-score" id="blackScore">2</div>
+                </div>
+            </div>
+            
+            <div class="turn-indicator" id="turnIndicator">
+                Black's Turn
+            </div>
+            
+            <div class="player-info" id="whiteInfo">
+                <div class="player-disc white-disc"></div>
+                <div class="player-details">
+                    <div class="player-name">White</div>
+                    <div class="player-score" id="whiteScore">2</div>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="640" height="640"></canvas>
+        
+        <div class="controls">
+            <button id="newGameBtn" class="btn">New Game</button>
+            <button id="passBtn" class="btn" style="display: none;">Pass Turn</button>
+            <button id="backBtn" class="btn btn-secondary">Back to Games</button>
+        </div>
+        
+        <div class="message" id="message"></div>
+    </div>
+    
+    <!-- Win Modal -->
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p id="winnerText"></p>
+            <div class="final-scores">
+                <div class="final-score">
+                    <div class="player-disc black-disc"></div>
+                    <span id="finalBlackScore">0</span>
+                </div>
+                <div class="final-score">
+                    <div class="player-disc white-disc"></div>
+                    <span id="finalWhiteScore">0</span>
+                </div>
+            </div>
+            <button id="playAgainBtn" class="btn">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+
