@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Flappy Bird</h1>
+        
+        <div class="game-info">
+            <div class="score-display">
+                <div class="score">
+                    <span class="label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="high-score">
+                    <span class="label">Best:</span>
+                    <span id="highScore">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-wrapper">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            
+            <div class="start-screen" id="startScreen">
+                <h2>Flappy Bird</h2>
+                <p>Press SPACE or Click to Flap</p>
+                <button class="btn" id="startBtn">Start Game</button>
+            </div>
+
+            <div class="game-over-screen hidden" id="gameOverScreen">
+                <h2>Game Over!</h2>
+                <p class="final-score">Score: <span id="finalScore">0</span></p>
+                <p class="best-score">Best: <span id="bestScore">0</span></p>
+                <button class="btn" id="restartBtn">Play Again</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p class="instructions">Press SPACE or Click to make the bird flap</p>
+            <div class="button-group">
+                <button class="btn secondary" id="backBtn">Back to Games</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

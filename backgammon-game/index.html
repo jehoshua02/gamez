@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgammon Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Backgammon</h1>
+        
+        <div class="game-info">
+            <div class="player-info" id="player1Info">
+                <div class="player-name">Player 1 (White)</div>
+                <div class="player-checkers">Checkers: <span id="p1Checkers">15</span></div>
+                <div class="player-off">Off Board: <span id="p1Off">0</span></div>
+            </div>
+            
+            <div class="dice-area">
+                <div class="current-player" id="currentPlayer">White's Turn</div>
+                <div class="dice-container" id="diceContainer">
+                    <div class="die" id="die1">?</div>
+                    <div class="die" id="die2">?</div>
+                </div>
+                <button class="btn" id="rollBtn">Roll Dice</button>
+                <button class="btn secondary" id="endTurnBtn" style="display: none;">End Turn</button>
+            </div>
+            
+            <div class="player-info" id="player2Info">
+                <div class="player-name">Player 2 (Black)</div>
+                <div class="player-checkers">Checkers: <span id="p2Checkers">15</span></div>
+                <div class="player-off">Off Board: <span id="p2Off">0</span></div>
+            </div>
+        </div>
+
+        <div class="board-wrapper">
+            <canvas id="gameCanvas" width="900" height="600"></canvas>
+        </div>
+
+        <div class="game-messages">
+            <div id="messageBox" class="message-box"></div>
+        </div>
+
+        <div class="controls">
+            <div class="button-group">
+                <button class="btn secondary" id="newGameBtn">New Game</button>
+                <button class="btn secondary" id="backBtn">Back to Games</button>
+            </div>
+        </div>
+
+        <div class="win-modal hidden" id="winModal">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <p class="winner-text" id="winnerText">White Wins!</p>
+                <button class="btn" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

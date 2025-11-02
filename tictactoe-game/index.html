@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">Tic-Tac-Toe</h1>
+        
+        <div class="game-info">
+            <div class="player-turn" id="playerTurn">Player X's Turn</div>
+            <div class="score-board">
+                <div class="score">
+                    <span class="player-label">Player X:</span>
+                    <span id="scoreX">0</span>
+                </div>
+                <div class="score">
+                    <span class="player-label">Player O:</span>
+                    <span id="scoreO">0</span>
+                </div>
+                <div class="score">
+                    <span class="player-label">Draws:</span>
+                    <span id="scoreDraw">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" id="resetBtn">New Game</button>
+            <button class="btn" id="resetScoreBtn">Reset Score</button>
+            <button class="btn secondary" id="backBtn">Back to Games</button>
+        </div>
+
+        <div class="game-mode">
+            <h3>Game Mode</h3>
+            <div class="mode-buttons">
+                <button class="mode-btn active" id="pvpBtn">Player vs Player</button>
+                <button class="mode-btn" id="pvcBtn">Player vs Computer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal hidden" id="gameOverModal">
+        <div class="modal-content">
+            <h2 id="gameOverTitle">Game Over</h2>
+            <p id="gameOverMessage"></p>
+            <button class="btn" id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

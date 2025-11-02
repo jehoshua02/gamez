@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Games Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .game-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .game-title {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .game-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
+
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Browser Games Collection</h1>
+        <p class="subtitle">Classic games reimagined for the web</p>
+        
+        <div class="games-grid">
+            <div class="game-card" onclick="window.location.href='snake-game/'">
+                <div class="game-icon">🐍</div>
+                <h2 class="game-title">Snake Game</h2>
+                <p class="game-description">
+                    Classic snake game with smooth controls and increasing difficulty. 
+                    Eat food, grow longer, and beat your high score!
+                </p>
+                <a href="snake-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='chess-game/'">
+                <div class="game-icon">♔</div>
+                <h2 class="game-title">Chess</h2>
+                <p class="game-description">
+                    Classic chess game with full rules implementation.
+                    Play against a friend with check, checkmate, and pawn promotion!
+                </p>
+                <a href="chess-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='tictactoe-game/'">
+                <div class="game-icon">⭕</div>
+                <h2 class="game-title">Tic-Tac-Toe</h2>
+                <p class="game-description">
+                    Classic tic-tac-toe game! Play against a friend or challenge the computer AI.
+                </p>
+                <a href="tictactoe-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='flappybird-game/'">
+                <div class="game-icon">🐦</div>
+                <h2 class="game-title">Flappy Bird</h2>
+                <p class="game-description">
+                    Navigate through pipes! Tap or press space to flap and avoid obstacles.
+                </p>
+                <a href="flappybird-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='memory-game/'">
+                <div class="game-icon">🧠</div>
+                <h2 class="game-title">Memory Match</h2>
+                <p class="game-description">
+                    Test your memory! Match pairs of cards in this classic concentration game.
+                </p>
+                <a href="memory-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='asteroids-game/'">
+                <div class="game-icon">🚀</div>
+                <h2 class="game-title">Asteroids</h2>
+                <p class="game-description">
+                    Classic arcade action! Destroy asteroids and survive in space.
+                </p>
+                <a href="asteroids-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.location.href='backgammon-game/'">
+                <div class="game-icon">🎲</div>
+                <h2 class="game-title">Backgammon</h2>
+                <p class="game-description">
+                    Classic board game! Move your checkers and bear them off to win.
+                </p>
+                <a href="backgammon-game/" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-icon">🎯</div>
+                <h2 class="game-title">More Games</h2>
+                <p class="game-description">
+                    More exciting games coming soon! Stay tuned for updates.
+                </p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ using HTML, CSS, and JavaScript</p>
+            <p>Use arrow keys to play • Press space to pause</p>
+        </footer>
+    </div>
+</body>
+</html>
+
