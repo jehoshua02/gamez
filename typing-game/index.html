@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Master - Progressive Letter Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../" class="back-to-games">← Back to Games</a>
+            <h1>⌨️ Typing Master</h1>
+            <p class="subtitle">Master all letter combinations progressively</p>
+        </header>
+
+        <!-- Level Selection Screen -->
+        <div id="levelSelector" class="screen">
+            <div class="level-info">
+                <h2>Level <span id="currentLevelNum">1</span></h2>
+                <p class="level-description" id="levelDescription">Home row keys: A S D F J K L ;</p>
+                <div class="level-stats">
+                    <div class="stat">
+                        <span class="stat-label">Completed:</span>
+                        <span class="stat-value" id="completedLevels">0</span> / <span id="totalLevels">30</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Best WPM:</span>
+                        <span class="stat-value" id="bestWPM">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Best Accuracy:</span>
+                        <span class="stat-value" id="bestAccuracy">0</span>%
+                    </div>
+                </div>
+            </div>
+            <button class="start-btn" id="startBtn">Start Level</button>
+            <div class="level-navigation">
+                <button class="nav-btn" id="prevLevelBtn">← Previous</button>
+                <button class="nav-btn" id="nextLevelBtn">Next →</button>
+            </div>
+        </div>
+
+        <!-- Typing Practice Screen -->
+        <div id="typingArea" class="screen" style="display: none;">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">Level:</span>
+                    <span class="stat-value" id="currentLevel">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">WPM:</span>
+                    <span class="stat-value" id="wpm">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Accuracy:</span>
+                    <span class="stat-value" id="accuracy">100</span>%
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="timer">0:00</span>
+                </div>
+            </div>
+
+            <div class="text-display">
+                <div id="textToType" class="text-to-type"></div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="typingInput" class="typing-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <button class="back-btn" id="backBtn">← Back to Menu</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen" style="display: none;">
+            <h2>Level Complete! 🎉</h2>
+            <div class="results-stats">
+                <div class="result-item">
+                    <span class="result-label">Words Per Minute:</span>
+                    <span class="result-value" id="finalWPM">0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Accuracy:</span>
+                    <span class="result-value" id="finalAccuracy">0</span>%
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Time:</span>
+                    <span class="result-value" id="finalTime">0:00</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Errors:</span>
+                    <span class="result-value" id="finalErrors">0</span>
+                </div>
+            </div>
+            <div class="results-message" id="resultsMessage"></div>
+            <div class="results-buttons">
+                <button class="result-btn" id="retryBtn">Retry Level</button>
+                <button class="result-btn primary" id="nextBtn">Next Level →</button>
+                <button class="result-btn" id="menuBtn">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

@@ -353,7 +353,7 @@ function generateMysteryStory(difficulty) {
 
     const paragraphs = [
         `<p>Detective ${detective} received an urgent call about ${mystery} in the ${location}. This case was unlike anything ${detective} had encountered before. The mystery had baffled local authorities for weeks.</p>`,
-        `<p>${detective} began investigating immediately, interviewing witnesses and examining the scene carefully. During the investigation, ${detective} discovered ${clue} that seemed insignificant at first but proved to be crucial.</p>`,
+        `<p>${detective} began investigating immediately, interviewing witnesses and examining the scene carefully. During the investigation, ${detective} discovered a ${clue} that seemed insignificant at first but proved to be crucial.</p>`,
         `<p>Following the trail of clues, ${detective} uncovered a pattern that others had missed. Each piece of evidence pointed to a surprising connection between seemingly unrelated events. The case was more complex than anyone had imagined.</p>`,
         difficulty !== 'easy' ? `<p>After ${randomInt(5, 15)} days of intensive investigation, ${detective} finally pieced together what had happened. The solution involved careful analysis of timing, motives, and opportunities. Every detail mattered in solving this puzzle.</p>` : '',
         `<p>In a dramatic revelation, ${detective} exposed ${culprit} as the person behind the mystery. The case was solved through brilliant deductive reasoning and attention to detail. ${detective}'s reputation as a master detective was well-deserved.</p>`
