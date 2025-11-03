@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Speed - Test Your Reading Comprehension</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">📚 Reading Speed 📚</h1>
+        
+        <!-- Story Selection -->
+        <div class="story-selector" id="storySelector">
+            <h2>Choose Your Story</h2>
+            <p class="instructions">Read the story carefully, then answer comprehension questions!</p>
+            
+            <div class="difficulty-selector">
+                <h3>Difficulty Level</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-difficulty="easy">Easy (Short)</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard (Long)</button>
+                </div>
+            </div>
+
+            <div class="story-buttons">
+                <button class="story-btn" data-story="0">
+                    <span class="story-icon">🦊</span>
+                    <span class="story-title">The Clever Fox</span>
+                </button>
+                <button class="story-btn" data-story="1">
+                    <span class="story-icon">🚀</span>
+                    <span class="story-title">Space Adventure</span>
+                </button>
+                <button class="story-btn" data-story="2">
+                    <span class="story-icon">🏰</span>
+                    <span class="story-title">The Lost Kingdom</span>
+                </button>
+                <button class="story-btn" data-story="3">
+                    <span class="story-icon">🌊</span>
+                    <span class="story-title">Ocean Mystery</span>
+                </button>
+                <button class="story-btn" data-story="4">
+                    <span class="story-icon">🎭</span>
+                    <span class="story-title">The Theater</span>
+                </button>
+                <button class="story-btn" data-story="5">
+                    <span class="story-icon">🔬</span>
+                    <span class="story-title">The Experiment</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Reading Area -->
+        <div class="reading-area" id="readingArea" style="display: none;">
+            <div class="reading-header">
+                <button class="btn btn-secondary" id="backBtn">← Back</button>
+                <div class="timer-display">
+                    <span class="timer-label">Reading Time:</span>
+                    <span class="timer-value" id="timer">0:00</span>
+                </div>
+            </div>
+
+            <div class="story-content" id="storyContent">
+                <!-- Story text will be inserted here -->
+            </div>
+
+            <div class="reading-controls">
+                <button class="btn btn-primary" id="finishReadingBtn">I'm Done Reading →</button>
+            </div>
+        </div>
+
+        <!-- Quiz Area -->
+        <div class="quiz-area" id="quizArea" style="display: none;">
+            <div class="quiz-header">
+                <h2>Comprehension Quiz</h2>
+                <div class="quiz-info">
+                    <span class="quiz-progress" id="quizProgress">Question 1 of 5</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-text" id="questionText"></div>
+                <div class="answer-options" id="answerOptions">
+                    <!-- Answer buttons will be inserted here -->
+                </div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="quiz-controls">
+                <button class="btn btn-secondary" id="nextQuestionBtn" style="display: none;">Next Question →</button>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div class="results-modal" id="resultsModal" style="display: none;">
+            <div class="modal-content">
+                <h2>📊 Reading Results 📊</h2>
+                <div class="results-stats">
+                    <div class="result-item">
+                        <span class="result-label">Reading Time</span>
+                        <span class="result-value" id="finalTime">0:00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Reading Speed</span>
+                        <span class="result-value" id="readingSpeed">0 WPM</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Comprehension</span>
+                        <span class="result-value" id="comprehension">0/5</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy</span>
+                        <span class="result-value" id="accuracy">0%</span>
+                    </div>
+                    <div class="result-item performance-rating">
+                        <span class="result-label">Performance</span>
+                        <span class="result-value" id="performance">Good</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn" id="readAgainBtn">Read Another Story</button>
+                    <button class="btn btn-secondary" id="backToMenuBtn">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
