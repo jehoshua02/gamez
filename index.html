@@ -85,6 +85,26 @@
             );
             transform: skewX(-25deg);
             transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .game-card::after {
+            content: '';
+            position: absolute;
+            top: var(--mouse-y, 50%);
+            left: var(--mouse-x, 50%);
+            width: 180px;
+            height: 180px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.25) 0%, rgba(255, 20, 147, 0.15) 30%, transparent 65%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-card:hover::after {
+            opacity: 1;
         }
 
         .game-card:hover::before {
@@ -600,6 +620,18 @@
                 } else {
                     card.style.display = 'none';
                 }
+            });
+        });
+
+        // Cursor glow effect on game cards
+        gameCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
     </script>
