@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff1493;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad1)"/>
+
+  <!-- Chef hat -->
+  <g transform="translate(50, 52)">
+    <!-- Hat puff (top) -->
+    <circle cx="-18" cy="-15" r="15" fill="white"/>
+    <circle cx="0" cy="-20" r="17" fill="white"/>
+    <circle cx="18" cy="-15" r="15" fill="white"/>
+    <ellipse cx="0" cy="-8" rx="30" ry="15" fill="white"/>
+
+    <!-- Hat base/band -->
+    <rect x="-28" y="0" width="56" height="22" fill="white" rx="3"/>
+    <ellipse cx="0" cy="22" rx="28" ry="7" fill="white"/>
+
+    <!-- Shadow on base -->
+    <ellipse cx="0" cy="2" rx="25" ry="4" fill="#f0f0f0"/>
+  </g>
+</svg>
+
