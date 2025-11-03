@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,18 +16,19 @@ body {
 
 .game-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff1493;
 }
 
 h1 {
     margin-bottom: 20px;
     font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 20px #ff4500, 0 0 40px #ff1493, 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: white;
 }
 
 .score-board {
@@ -39,16 +40,20 @@ h1 {
 }
 
 .score, .high-score {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     border-radius: 10px;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+    color: white;
+    text-shadow: 0 0 10px #ff4500;
 }
 
 #gameCanvas {
-    border: 3px solid #fff;
+    border: 3px solid #ff1493;
     border-radius: 10px;
-    background-color: #1a1a2e;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: #000;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6), 0 4px 15px rgba(0, 0, 0, 0.8);
     display: block;
     margin: 0 auto;
 }
@@ -63,9 +68,9 @@ h1 {
 }
 
 button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
     color: white;
-    border: none;
+    border: 2px solid #ff1493;
     padding: 12px 25px;
     margin: 5px;
     border-radius: 25px;
@@ -73,12 +78,13 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 6px 20px rgba(0, 0, 0, 0.4);
+    border-color: #ff4500;
 }
 
 button:active {
@@ -92,7 +98,13 @@ button:disabled {
 }
 
 button.secondary {
-    background: linear-gradient(135deg, #868f96 0%, #596164 100%);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+button.secondary:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
 .game-over {
@@ -100,22 +112,26 @@ button.secondary {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 50px rgba(255, 20, 147, 0.8), 0 8px 32px rgba(0, 0, 0, 0.8);
+    border: 3px solid #ff1493;
     z-index: 10;
 }
 
 .game-over h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #ff6b6b;
+    color: #ff4500;
+    text-shadow: 0 0 20px #ff4500, 0 0 40px #ff1493;
 }
 
 .game-over p {
     font-size: 1.5em;
     margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 0 10px #ff1493;
 }
 
 .hidden {
@@ -123,8 +139,9 @@ button.secondary {
 }
 
 #restartBtn {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
     font-size: 1.2em;
     padding: 15px 35px;
+    border: 2px solid #ff4500;
 }
 
