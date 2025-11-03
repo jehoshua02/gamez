@@ -44,9 +44,11 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .game-card {
@@ -61,6 +63,8 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
+            max-width: 400px;
+            justify-self: center;
         }
 
         .game-card:hover {
@@ -136,140 +140,289 @@
             padding: 20px;
             text-shadow: 0 0 10px #ff1493, 0 0 20px #ff4500;
         }
+
+        /* Search Box */
+        .search-container {
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #ff1493;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search-box:focus {
+            border-color: #ff4500;
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
+            transform: scale(1.02);
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #ff1493;
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: none; /* Hidden until music files are added */
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+            z-index: 1000;
+        }
+
+        .music-toggle {
+            background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.7);
+        }
+
+        .music-info {
+            color: white;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .music-title {
+            font-weight: bold;
+            color: #ff4500;
+            text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .track-btn {
+            background: rgba(255, 20, 147, 0.3);
+            border: 1px solid #ff1493;
+            color: white;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .track-btn:hover {
+            background: rgba(255, 20, 147, 0.6);
+            transform: scale(1.1);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(135deg, #ff1493 0%, #ff4500 100%);
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+            border: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>👨‍🍳💋 Chef Kiss Gamez 🎮</h1>
         <p class="subtitle">Classic games reimagined for the web</p>
-        
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="gameSearch" class="search-box" placeholder="🔍 Search games...">
+        </div>
+
         <div class="games-grid">
-            <div class="game-card" onclick="window.location.href='snake-game/'">
-                <div class="game-icon">🐍</div>
-                <h2 class="game-title">Snake Game</h2>
+            <div class="game-card" onclick="window.open('asteroids-game/', '_blank')">
+                <div class="game-icon">🚀</div>
+                <h2 class="game-title">Asteroids</h2>
                 <p class="game-description">
-                    Classic snake game with smooth controls and increasing difficulty. 
-                    Eat food, grow longer, and beat your high score!
+                    Classic arcade action! Destroy asteroids and survive in space.
                 </p>
-                <a href="snake-game/" class="play-button">Play Now</a>
+                <a href="asteroids-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
-            <div class="game-card" onclick="window.location.href='chess-game/'">
+            <div class="game-card" onclick="window.open('backgammon-game/', '_blank')">
+                <div class="game-icon">🎲</div>
+                <h2 class="game-title">Backgammon</h2>
+                <p class="game-description">
+                    Classic board game! Move your checkers and bear them off to win.
+                </p>
+                <a href="backgammon-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('chess-game/', '_blank')">
                 <div class="game-icon">♔</div>
                 <h2 class="game-title">Chess</h2>
                 <p class="game-description">
                     Classic chess game with full rules implementation.
                     Play against a friend with check, checkmate, and pawn promotion!
                 </p>
-                <a href="chess-game/" class="play-button">Play Now</a>
+                <a href="chess-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
-            <div class="game-card" onclick="window.location.href='tictactoe-game/'">
-                <div class="game-icon">⭕</div>
-                <h2 class="game-title">Tic-Tac-Toe</h2>
-                <p class="game-description">
-                    Classic tic-tac-toe game! Play against a friend or challenge the computer AI.
-                </p>
-                <a href="tictactoe-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='flappybird-game/'">
+            <div class="game-card" onclick="window.open('flappybird-game/', '_blank')">
                 <div class="game-icon">🐦</div>
                 <h2 class="game-title">Flappy Bird</h2>
                 <p class="game-description">
                     Navigate through pipes! Tap or press space to flap and avoid obstacles.
                 </p>
-                <a href="flappybird-game/" class="play-button">Play Now</a>
+                <a href="flappybird-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
-            <div class="game-card" onclick="window.location.href='memory-game/'">
-                <div class="game-icon">🧠</div>
-                <h2 class="game-title">Memory Match</h2>
-                <p class="game-description">
-                    Test your memory! Match pairs of cards in this classic concentration game.
-                </p>
-                <a href="memory-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='asteroids-game/'">
-                <div class="game-icon">🚀</div>
-                <h2 class="game-title">Asteroids</h2>
-                <p class="game-description">
-                    Classic arcade action! Destroy asteroids and survive in space.
-                </p>
-                <a href="asteroids-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='backgammon-game/'">
-                <div class="game-icon">🎲</div>
-                <h2 class="game-title">Backgammon</h2>
-                <p class="game-description">
-                    Classic board game! Move your checkers and bear them off to win.
-                </p>
-                <a href="backgammon-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='othello-game/'">
-                <div class="game-icon">⚫⚪</div>
-                <h2 class="game-title">Othello</h2>
-                <p class="game-description">
-                    Strategic board game! Flip your opponent's discs to dominate the board.
-                </p>
-                <a href="othello-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='solitaire-game/'">
-                <div class="game-icon">🃏</div>
-                <h2 class="game-title">Solitaire</h2>
-                <p class="game-description">
-                    Classic Klondike Solitaire! Stack cards and move them to foundations.
-                </p>
-                <a href="solitaire-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='minesweeper-game/'">
-                <div class="game-icon">💣</div>
-                <h2 class="game-title">Minesweeper</h2>
-                <p class="game-description">
-                    Classic puzzle game! Find all mines without detonating them.
-                </p>
-                <a href="minesweeper-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='space-invaders-game/'">
-                <div class="game-icon">👾</div>
-                <h2 class="game-title">Space Invaders</h2>
-                <p class="game-description">
-                    Classic arcade shooter! Defend Earth from alien invaders.
-                </p>
-                <a href="space-invaders-game/" class="play-button">Play Now</a>
-            </div>
-
-            <div class="game-card" onclick="window.location.href='math-facts-game/'">
+            <div class="game-card" onclick="window.open('math-facts-game/', '_blank')">
                 <div class="game-icon">🔢</div>
                 <h2 class="game-title">Math Facts</h2>
                 <p class="game-description">
                     Practice addition, subtraction, multiplication, and division!
                 </p>
-                <a href="math-facts-game/" class="play-button">Play Now</a>
+                <a href="math-facts-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
-            <div class="game-card" onclick="window.location.href='reading-speed-game/'">
+            <div class="game-card" onclick="window.open('memory-game/', '_blank')">
+                <div class="game-icon">🧠</div>
+                <h2 class="game-title">Memory Match</h2>
+                <p class="game-description">
+                    Test your memory! Match pairs of cards in this classic concentration game.
+                </p>
+                <a href="memory-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('minesweeper-game/', '_blank')">
+                <div class="game-icon">💣</div>
+                <h2 class="game-title">Minesweeper</h2>
+                <p class="game-description">
+                    Classic puzzle game! Find all mines without detonating them.
+                </p>
+                <a href="minesweeper-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('othello-game/', '_blank')">
+                <div class="game-icon">⚫⚪</div>
+                <h2 class="game-title">Othello</h2>
+                <p class="game-description">
+                    Strategic board game! Flip your opponent's discs to dominate the board.
+                </p>
+                <a href="othello-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('reading-speed-game/', '_blank')">
                 <div class="game-icon">📚</div>
                 <h2 class="game-title">Reading Speed</h2>
                 <p class="game-description">
                     Test your reading speed and comprehension with unique generated stories!
                 </p>
-                <a href="reading-speed-game/" class="play-button">Play Now</a>
+                <a href="reading-speed-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
-            <div class="game-card" onclick="window.location.href='typing-game/'">
+            <div class="game-card" onclick="window.open('snake-game/', '_blank')">
+                <div class="game-icon">🐍</div>
+                <h2 class="game-title">Snake Game</h2>
+                <p class="game-description">
+                    Classic snake game with smooth controls and increasing difficulty.
+                    Eat food, grow longer, and beat your high score!
+                </p>
+                <a href="snake-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('solitaire-game/', '_blank')">
+                <div class="game-icon">🃏</div>
+                <h2 class="game-title">Solitaire</h2>
+                <p class="game-description">
+                    Classic Klondike Solitaire! Stack cards and move them to foundations.
+                </p>
+                <a href="solitaire-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('space-invaders-game/', '_blank')">
+                <div class="game-icon">👾</div>
+                <h2 class="game-title">Space Invaders</h2>
+                <p class="game-description">
+                    Classic arcade shooter! Defend Earth from alien invaders.
+                </p>
+                <a href="space-invaders-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('tictactoe-game/', '_blank')">
+                <div class="game-icon">⭕</div>
+                <h2 class="game-title">Tic-Tac-Toe</h2>
+                <p class="game-description">
+                    Classic tic-tac-toe game! Play against a friend or challenge the computer AI.
+                </p>
+                <a href="tictactoe-game/" target="_blank" class="play-button">Play Now</a>
+            </div>
+
+            <div class="game-card" onclick="window.open('typing-game/', '_blank')">
                 <div class="game-icon">⌨️</div>
                 <h2 class="game-title">Typing Master</h2>
                 <p class="game-description">
                     Master all letter combinations through 30 progressive typing levels!
                 </p>
-                <a href="typing-game/" class="play-button">Play Now</a>
+                <a href="typing-game/" target="_blank" class="play-button">Play Now</a>
             </div>
 
             <div class="game-card coming-soon">
@@ -286,6 +439,123 @@
             <p>Built with ❤️ using HTML, CSS, and JavaScript</p>
         </footer>
     </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-toggle" id="musicToggle">⏸️</button>
+        <div class="music-info">
+            <div class="music-title" id="musicTitle">Little Idea</div>
+            <div class="music-controls">
+                <button class="track-btn" id="prevTrack">⏮️</button>
+                <div class="volume-control">
+                    <span style="font-size: 12px;">🔊</span>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="30">
+                </div>
+                <button class="track-btn" id="nextTrack">⏭️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <!-- To add music: Place your MP3 file in the root directory and update the src below -->
+    <!-- Example: <audio id="bgMusic" loop autoplay><source src="music.mp3" type="audio/mpeg"></audio> -->
+    <audio id="bgMusic" loop></audio>
+
+    <script>
+        // Music Player
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const musicTitle = document.getElementById('musicTitle');
+        const prevTrack = document.getElementById('prevTrack');
+        const nextTrack = document.getElementById('nextTrack');
+        let isPlaying = true;
+        let currentTrack = 0;
+
+        // Add your own music files here
+        // Place MP3 files in a 'music' folder and update the URLs below
+        const tracks = [
+            { name: 'Track 1', url: 'music/track1.mp3' },
+            { name: 'Track 2', url: 'music/track2.mp3' },
+            { name: 'Track 3', url: 'music/track3.mp3' },
+            { name: 'Track 4', url: 'music/track4.mp3' },
+            { name: 'Track 5', url: 'music/track5.mp3' }
+        ];
+
+        function loadTrack(index) {
+            bgMusic.src = tracks[index].url;
+            musicTitle.textContent = tracks[index].name;
+            if (isPlaying) {
+                bgMusic.play().catch(() => {
+                    isPlaying = false;
+                    musicToggle.textContent = '▶️';
+                });
+            }
+        }
+
+        // Set initial volume
+        bgMusic.volume = 0.3;
+
+        // Load first track if available
+        if (tracks[0].url && tracks[0].url !== 'music/track1.mp3') {
+            loadTrack(0);
+        } else {
+            // No music files configured
+            musicTitle.textContent = 'No Music';
+            isPlaying = false;
+            musicToggle.textContent = '▶️';
+        }
+
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicToggle.textContent = '▶️';
+                isPlaying = false;
+            } else {
+                bgMusic.play();
+                musicToggle.textContent = '⏸️';
+                isPlaying = true;
+            }
+        });
+
+        prevTrack.addEventListener('click', () => {
+            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+            loadTrack(currentTrack);
+        });
+
+        nextTrack.addEventListener('click', () => {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            loadTrack(currentTrack);
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            bgMusic.volume = e.target.value / 100;
+        });
+
+        // Auto-play next track when current ends
+        bgMusic.addEventListener('ended', () => {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            loadTrack(currentTrack);
+        });
+
+        // Search functionality
+        const searchBox = document.getElementById('gameSearch');
+        const gameCards = document.querySelectorAll('.game-card');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            gameCards.forEach(card => {
+                const title = card.querySelector('.game-title')?.textContent.toLowerCase() || '';
+
+                if (title.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
