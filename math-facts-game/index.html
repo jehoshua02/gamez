@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Facts - Practice Your Math Skills</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="game-title">🔢 Math Facts 🔢</h1>
+        
+        <div class="mode-selector" id="modeSelector">
+            <h2>Choose Your Operation</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" data-mode="addition">
+                    <span class="mode-icon">➕</span>
+                    <span class="mode-name">Addition</span>
+                </button>
+                <button class="mode-btn" data-mode="subtraction">
+                    <span class="mode-icon">➖</span>
+                    <span class="mode-name">Subtraction</span>
+                </button>
+                <button class="mode-btn" data-mode="multiplication">
+                    <span class="mode-icon">✖️</span>
+                    <span class="mode-name">Multiplication</span>
+                </button>
+                <button class="mode-btn" data-mode="division">
+                    <span class="mode-icon">➗</span>
+                    <span class="mode-name">Division</span>
+                </button>
+            </div>
+            
+            <div class="difficulty-selector">
+                <h3>Difficulty Level</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-difficulty="easy">Easy (1-10)</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium (1-20)</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard (1-50)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area" id="gameArea" style="display: none;">
+            <div class="game-header">
+                <button class="btn btn-secondary" id="backBtn">← Back</button>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Streak</span>
+                        <span class="stat-value" id="streak">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="timer">0:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question" id="question">5 + 3 = ?</div>
+                <div class="answer-input-container">
+                    <input type="number" id="answerInput" class="answer-input" placeholder="Your answer" autofocus>
+                    <button class="btn btn-submit" id="submitBtn">Submit</button>
+                </div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-label">Questions Answered: <span id="questionsAnswered">0</span>/10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-modal" id="resultsModal" style="display: none;">
+            <div class="modal-content">
+                <h2>🎉 Great Job! 🎉</h2>
+                <div class="results-stats">
+                    <div class="result-item">
+                        <span class="result-label">Final Score</span>
+                        <span class="result-value" id="finalScore">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Correct Answers</span>
+                        <span class="result-value" id="correctAnswers">0/10</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Best Streak</span>
+                        <span class="result-value" id="bestStreak">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time</span>
+                        <span class="result-value" id="finalTime">0:00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy</span>
+                        <span class="result-value" id="accuracy">0%</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn" id="playAgainBtn">Play Again</button>
+                    <button class="btn btn-secondary" id="changeGameBtn">Change Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
