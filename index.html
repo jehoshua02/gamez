@@ -59,12 +59,35 @@
             backdrop-filter: blur(10px);
             border: 2px solid #ff1493;
             box-shadow: 0 0 30px rgba(255, 20, 147, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.75s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             display: flex;
             flex-direction: column;
             max-width: 400px;
             justify-self: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 140, 80, 0.4),
+                transparent
+            );
+            transform: skewX(-25deg);
+            transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .game-card:hover::before {
+            left: 150%;
         }
 
         .game-card:hover {
@@ -104,13 +127,36 @@
             border-radius: 25px;
             font-size: 1.1em;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.75s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3);
             margin-top: auto;
             border: 2px solid #ff1493;
+            position: relative;
+            overflow: hidden;
         }
 
-        .play-button:hover {
+        .play-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+            );
+            transform: skewX(-25deg);
+            transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .game-card:hover .play-button::before {
+            left: 150%;
+        }
+
+        .game-card:hover .play-button {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 6px 20px rgba(0, 0, 0, 0.4);
             border-color: #ff4500;
