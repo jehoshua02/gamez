@@ -34,6 +34,8 @@
             font-size: 3em;
             margin-bottom: 20px;
             text-shadow: 0 0 20px #ff4500, 0 0 40px #ff1493, 2px 2px 4px rgba(0, 0, 0, 0.8);
+            top: 20px;
+            z-index: 100;
         }
 
         .subtitle {
@@ -215,6 +217,10 @@
         .search-container {
             margin: 30px auto;
             max-width: 600px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            padding: 10px 0;
         }
 
         .search-box {
@@ -227,6 +233,7 @@
             color: white;
             outline: none;
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
@@ -359,7 +366,6 @@
 <body>
     <div class="container">
         <h1>👨‍🍳💋 Chef Kiss Gamez 🎮</h1>
-        <p class="subtitle">Classic games reimagined for the web</p>
 
         <!-- Search Box -->
         <div class="search-container">
